@@ -1,85 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6805575897161060"
-     crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-6805575897161060">
-  <title>解析坊-VIP视频在线解析</title>
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f5f5f5;
-    }
-
-    input[type="text"] {
-      width: 300px;
-      padding: 10px;
-      margin-bottom: 20px;
-    }
-
-    button {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px; /* 圆角半径 */
-      margin: 10px; /* 四周的间距 */
-    }
-    
-    p {
-      color: gray;
-      font-size: 16px;
-      margin-top: 20px;
-    }
-
-    h2 {
-      color: gray;
-      font-size: 18px;
-      margin-top: 20px;
-    }
-    
-    h1 {
-      color: gray;
-      font-size: 24px;
-      margin-top: 20px;
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解析坊-全网视频解析</title>
+    <style>
+        /* 重置默认样式 */
+        body, h1, select, input, button {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        /* 背景和整体布局 */
+        body {
+            background-image: url('https://bing.img.run/rand.php');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            backdrop-filter: blur(10px);
+        }
+        /* 主容器样式 */
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        /* 标题样式 */
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        /* 表单元素样式 */
+        select, input, button {
+            margin: 0 5px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        select {
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        input {
+            width: 300px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        button {
+            cursor: pointer;
+            color: white;
+            background-color: #007BFF;
+        }
+    </style>
 </head>
 <body>
-  <h1>解析坊-VIP视频在线解析</h1>
-  <input type="text" id="videoLink" placeholder="请粘贴视频链接">
-  <button onclick="Video1()">解析接口1(xmflv稳定解析)</button>
-  <button onclick="Video2()">解析接口2(im1907云加速)</button>
-  <button onclick="Video3()">解析接口3(全民解析)</button>
-  <h2>其他工具</h2>
-  <button onclick="tool1()">哔哩哔哩视频下载(贝贝bilibili)</button>
-  <h2>当接口无法使用时，请更换其他接口重新尝试！</h2>
-  <h2>请不要轻易相信视频中的广告⚠️谨防上当受骗！</h2>
-  <p>本项目已开源：https://github.com/chengtx809/video</p>
-  <p>本站仅供学习使用</p>
-  <script>
-    function Video1() {
-      const videoLink = document.getElementById('videoLink').value;
-      window.open('https://jx.xmflv.com/?url=' + videoLink);
-    }
-    function Video2() {
-      const videoLink = document.getElementById('videoLink').value;
-        window.open('https://im1907.top/?jx=' + videoLink);
-    }
-    function Video3() {
-      const videoLink = document.getElementById('videoLink').value;
-        window.open('https://api.quanminjiexi.com/?v=' + videoLink);
-    }
-    function tool1() {
-      window.open('https://xbeibeix.com/api/bilibili/');
-    }
-  </script>
+    <div class="container">
+        <h1>解析坊-全网视频解析</h1>
+        <h2>⚠本工具仅供学习使用,请勿用于非法用途</h2>
+        <h2>❗接口来自于网络，可能夹带广告，请勿轻信！</h2>
+        <div>
+            <select id="解析方式">
+                <option value="xmflv">虾米解析</option>
+                <option value="im1907">im1907解析</option>
+            </select>
+            <input type="text" id="视频链接" placeholder="粘贴视频链接">
+            <button onclick="解析视频()">解析</button>
+        </div>
+    </div>
+
+    <script>
+        function 解析视频() {
+            var 解析方式 = document.getElementById("解析方式").value;
+            var 视频链接 = document.getElementById("视频链接").value;
+            var 目标链接;
+
+            if (解析方式 === "xmflv") {
+                目标链接 = "https://jx.xmflv.com/?url=" + 视频链接;
+            } else if (解析方式 === "im1907") {
+                目标链接 = "https://im1907.top/?jx=" + 视频链接;
+            }
+
+            if (视频链接) {
+                window.open(目标链接, "_blank");
+            } else {
+                alert("请输入视频链接！");
+            }
+        }
+    </script>
 </body>
 </html>
