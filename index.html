@@ -13,7 +13,7 @@
         }
         /* 背景和整体布局 */
         body {
-            background-image: url('https://bing.img.run/rand.php');
+            background-image: url('https://bing.com/th?id=OHR.MtStMichel_ZH-CN1232662142_1920x1080.jpg');
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -33,6 +33,10 @@
         h1 {
             color: white;
             margin-bottom: 20px;
+        }
+        h2 {
+            color: white;
+            margin-bottom: 12px;
         }
         /* 表单元素样式 */
         select, input, button {
@@ -54,6 +58,18 @@
             color: white;
             background-color: #007BFF;
         }
+        /* 添加 Github 链接样式 */
+        .github-link {
+            margin-top: 15px;
+            color: white;
+        }
+        .github-link a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .github-link a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -68,6 +84,9 @@
             </select>
             <input type="text" id="视频链接" placeholder="粘贴视频链接">
             <button onclick="解析视频()">解析</button>
+        </div>
+        <div class="github-link">
+            本项目已开源至<a href="https://github.com/chengtx809/jxfang" target="_blank">Github</a>
         </div>
     </div>
 
